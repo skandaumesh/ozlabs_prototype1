@@ -12,7 +12,8 @@ export default auth((req) => {
   const isPublicRoute =
     nextUrl.pathname === '/' ||
     nextUrl.pathname.startsWith('/portal') ||
-    nextUrl.pathname.startsWith('/api/portal');
+    nextUrl.pathname.startsWith('/api/portal') ||
+    nextUrl.pathname.startsWith('/api/v1');
   const isAuthRoute = nextUrl.pathname.startsWith('/login');
   const isCronRoute = nextUrl.pathname.startsWith('/api/cron');
 
