@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 async function main() {
-  await mongoose.connect('mongodb+srv://onezerolabs:onezerolabs%402025@cluster0.u8eddyu.mongodb.net/onezerolabs?appName=Cluster0');
+  await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/ozlabs');
   const db = mongoose.connection.db;
   const client = await db.collection('clients').findOne({ email: 'skandaumesh82@gmail.com' });
   if (client) {
